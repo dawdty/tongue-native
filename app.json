@@ -1,13 +1,18 @@
 {
   "expo": {
-    "name": "tongue-native-scaffold.gnfLGu",
-    "slug": "tongue-native-scaffold.gnfLGu",
+    "name": "Tongue Native",
+    "slug": "tongue-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Tongue uses your microphone for realtime language practice."
+      },
+      "bitcode": false,
+      "bundleIdentifier": "com.anonymous.tongue-native"
     },
     "android": {
       "adaptiveIcon": {
@@ -16,10 +21,24 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.CAMERA",
+        "android.permission.INTERNET",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.WAKE_LOCK",
+        "android.permission.BLUETOOTH"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "@config-plugins/react-native-webrtc",
+      "expo-dev-client"
+    ]
   }
 }
